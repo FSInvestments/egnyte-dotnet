@@ -24,7 +24,7 @@ You need to create an account to have a domain and generate a key for your appli
 
 ## How to use
 
-### Obtaining an access token
+### Obtaining an access token for interactive session
 
 In Egnyte.Api all 3 authorization flows are implemented. However, Authorization Code Flow is the most common. To create authorize uri, use OAuthHelper class:
 ```csharp
@@ -44,6 +44,17 @@ var token = await EgnyteClientHelper.GetTokenFromCode(
     Secret,
     "https://mywebsite.com/redirectEgnyteResponse",
 	code);
+```
+
+### Obtaining an access token for non-interactive (batch, CLI, server-to-server) session
+
+Use a Resource Owner flow to obtain the token directly, without the redirect:
+```csharp
+var token = await EgnyteClientHelper.GetTokenResourceOwnerFlow(
+    Domain,
+    PrivateKey,	// aka Client Id
+    Username,
+    Password);
 ```
 
 ### API operations using token
