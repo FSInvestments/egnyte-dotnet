@@ -57,7 +57,8 @@ namespace Egnyte.Api.Links
                 data.LinkToCurrent,
                 data.ExpiryDate,
                 data.CreationDate,
-                data.CreatedBy);
+                data.CreatedBy,
+                data.Password);
         }
 
         private static ProtectionType ParseProtectionType(string protection)

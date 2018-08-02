@@ -14,7 +14,8 @@ namespace Egnyte.Api.Links
             bool linkToCurrent,
             DateTime expiryDate,
             DateTime creationDate,
-            string createdBy)
+            string createdBy,
+            string password)
         {
             Links = links;
             Path = path;
@@ -25,6 +26,7 @@ namespace Egnyte.Api.Links
             ExpiryDate = expiryDate;
             CreationDate = creationDate;
             CreatedBy = createdBy;
+            Password = password;
         }
 
         public List<Link> Links { get; private set; }
@@ -44,5 +46,7 @@ namespace Egnyte.Api.Links
         public DateTime CreationDate { get; private set; }
         
         public string CreatedBy { get; private set; }
+
+        public string Password { get; private set; }
     }
 }
