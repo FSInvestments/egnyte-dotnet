@@ -32,5 +32,8 @@ namespace Egnyte.Api.Links
 
         [JsonProperty(PropertyName = "created_by")]
         public string CreatedBy { get; set; }
+
+        [JsonProperty(PropertyName = "password")]
+        public string Password { get; set; }
     }
 }

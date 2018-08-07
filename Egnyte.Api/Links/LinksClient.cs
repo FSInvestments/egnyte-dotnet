@@ -187,7 +187,7 @@ namespace Egnyte.Api.Links
             if (link.SendEmail.HasValue)
             {
                 builder.AppendFormat(@", ""send_email"" : ""{0}""", link.SendEmail.Value ? "true" : "false");
-                if (link.Recipients.Count > 0)
+                if ((link.Recipients?.Count ?? 0) > 0)
                 {
                     builder.Append(", \"recipients\": [");
                     builder.Append(string.Join(", ", link.Recipients.Select(r => "\"" + r + "\"")));
